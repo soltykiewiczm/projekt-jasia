@@ -1,0 +1,100 @@
+header {
+    float: left;
+    width:100%;
+    margin-bottom: 20px;
+    background-color: white;
+    position: fixed;
+    height: 150px;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul li {
+    font-size: large;
+    font-style: oblique;
+    font-weight: bold;
+    float: left;
+    list-style-type: none;
+    background-color: red;
+    padding: 20px 30px 20px 30px;
+    margin: 30px;
+
+}
+
+header nav ul li a:hover {
+    color: greenyellow;
+    font-weight: bold;
+}
+
+header img {
+    width: 15%;
+    margin: 22.5px 0px 0px 15px;
+
+}
+
+body {
+    background-color: black;
+    margin: 0px;
+}
+main {
+    margin-top: 150px;
+    float: left;
+    width: 65%;
+    min-height: 75vh;
+    margin-right: 3px;
+ }
+
+aside {
+    margin-top: 150px;
+    float: right;
+    width: 33%;
+    height: auto;
+}
+aside nav {
+    border: 1px dashed black;
+    margin-bottom: 20px;
+}
+aside nav ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+main article {
+    margin: 15px 5px 0px 15px;
+    background-color: white;
+}
+
+aside article {
+    margin: 15px 15px 15px 0px;
+    background-color: white;
+}
+footer {
+
+    float: left;
+    width: 100%;
+    background-color: white;
+    height: 60px;
+    text-align: center;
+    line-height: 57px;
+
+}
+
+footer span {
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h4 {
+    padding: 15px 0px 0px 15px;
+    margin: 0px;
+}
+p {
+    padding: 15px;
+    margin: 0px;
+}
