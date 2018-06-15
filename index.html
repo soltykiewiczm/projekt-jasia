@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-md-6">
                                             <p>Żądanie</p>
                                             <form id="request-form">
                                                 <div class="form-group">
@@ -102,7 +102,7 @@
                                                 <button id="request-send" type="submit" class="btn btn-primary">Wyślij</button>
                                             </form>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-md-6">
                                             <p>Odpowiedź</p>
                                             <pre>
                                                 <code id="request-response" class="json">
@@ -151,7 +151,7 @@
                         </div>
                         <div class="col-12">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     <div class="card">
                                         <div class="card-header">
                                             Formularz dodawania użytkownika
@@ -306,6 +306,125 @@
                                             <tr>
                                                 <td colspan="5">
                                                     Brak użytkowników - odśwież listę
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                        </div>                        
+                    </div>
+                    <div class="row pt-2 pb-4 task-row">
+                        <div class="col-12">
+                            <h4>Zadanie nr 6</h4>
+                            <p>
+                                Do obiektu <code>ApiClient</code> dodaj metodę <code>addUserPost(userId, post)</code>, która przyjmuje 2 argumenty:
+                                <ul>
+                                    <li>
+                                        <code>userId</code> - Id użytkownika któremu chcemy dodac posta
+                                    </li>
+                                    <li>
+                                        <code>post</code> - obiekt z danymi posta
+                                    </li>
+                                </ul>                                
+                            </p>
+                            <div class="row">
+                                <div class="col-12">
+                                    <pre>
+                                        <code class="json">
+    {
+        "title": "Lorem ipsum",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis fringilla libero. Maecenas lobortis ullamcorper auctor.",
+        "date": "2018-06-15T14:38:53.099Z"
+    }
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                            <p>
+                                Metoda ta ma wysyłać żadanie HTTP <code>POST</code> z ID użytkownika i postem na adres <code>/users/:userId/posts</code>.
+                            </p>
+                            <p>
+                                Działanie metody przetestuj za pomocą formularza poniżej.
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Formularz dodawania posta użytkownika
+                                        </div>
+                                        <div class="card-body">
+                                            <form id="task-6-posts-add-form">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <button type="button" id="task-6-get-users-btn" class="btn btn-primary">Odśwież</button>
+                                                        </div>
+                                                        <select id="task-6-users-list" class="form-control"></select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input name="title" type="text" class="form-control" id="title" placeholder="Tytuł">
+                                                </div>
+                                                <div class="form-group">
+                                                    <textarea class="form-control" name="body" rows="6"></textarea>
+                                                </div>
+                                                <br>
+                                                <button id="task-6-posts-add-btn" type="submit" class="btn btn-primary">Dodaj</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row pt-2 task-row">
+                        <div class="col-12">
+                            <h4>Zadanie nr 7</h4>
+                            <p>
+                                Do obiektu <code>ApiClient</code> dodaj metodę <code>getUserPosts(userId)</code> przyjmującą 1 argument:
+                                <ul>
+                                    <li>
+                                        <code>userId</code> - id użytkownika do którego posty chcemy pobrać
+                                    </li>
+                                </ul>
+                                
+                                Metoda ta ma wysyłać żądanie HTTP <code>GET</code> na adres <code>/users/:userId/posts</code> i ma zwracać obiekt <code>Promise</code>, który po wykonaniu ma zwrócić listę postów danego użytkownika.
+                                Działanie metody przetestuj za pomocą tabelki poniżej (przycisk <i>odśwież</i> pobiera listę postów dla danego użytkownika).
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <form class="form-inline">
+                                        <label>Lista użytkowników</label>  <button id="task-7-users-get-btn" type="button" class="btn btn-primary">Odśwież</button>
+                                        <div class="input-group">
+                                            <select class="form-control" id="task-7-users-list"></select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-body">
+                                    <table id="task-7-posts-table" class="table table-bordered table-striped table-hover table-responsive-lg">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Data</th>
+                                                <th>Tytuł</th>
+                                                <th>Treść</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    Brak postów - odśwież listę
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -692,6 +811,141 @@
                         );
                     })
                     ;
+            });
+            ///
+
+            // Zadanie nr 6
+            $usersSelect = $('#task-6-users-list');
+            $('#task-6-get-users-btn').off('click').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if ('function' !== typeof client.getUsers) {
+                    alert('Metoda getUsers nie została zaimplementowana :(');
+                    return;
+                }
+                
+                client.getUsers()
+                    .then(function (users) {
+                        $usersList.empty();
+                        for (var id in users) {
+                            var user = users[id];
+                            $usersSelect.append(
+                                $('<option>')
+                                    .html(user.name)
+                                    .val(id)
+                                    .data('user', user)
+                                    .data('user-id', id)
+                            );
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                        $usersSelect.empty();
+                        alert('Wystapił błąd :( - spróbuj ponownie');
+
+                    })
+                    ;
+            });
+
+            $('#task-6-posts-add-btn').off('click').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if ('function' !== typeof client.addUserPost) {
+                    alert('Metoda addUserPost nie została zaimplementowana :(');
+                    return;
+                }
+                $addPostsForm = $('#task-6-posts-add-form');
+                
+                var userId = $usersSelect.val();
+                if (!userId) {
+                    alert('Odśwież listę użytkowników!');
+                    return;
+                }
+                                
+                var post = {
+                    title: $addPostsForm.find('input[name=title]').val(),
+                    body: $addPostsForm.find('textarea[name=body]').val(),
+                    date: (new Date()).toISOString(),
+                };
+
+                client.addUserPost(userId, post)
+                    .then(function () {
+                        alert('Dodano post: ' + post.title);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                        alert('Wystapił błąd :( - spróbuj ponownie');
+                    })
+                    ;
+            });
+            //
+
+
+            // Zadanie nr 7
+
+            var $usersList = $('#task-7-users-list');
+            var $postsTable = $('#task-7-posts-table').find('tbody');
+            $('#task-7-users-get-btn').off('click').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if ('function' !== typeof client.getUsers) {
+                    alert('Metoda getUsers nie została zaimplementowana :(');
+                    return;
+                }
+
+                
+                client.getUsers()
+                    .then(function (users) {
+                        $usersList.empty();
+                        for (var id in users) {
+                            var user = users[id];
+                            $usersList.append(
+                                $('<option>')
+                                    .html(user.name)
+                                    .val(id)
+                                    .data('user', user)
+                                    .data('user-id', id)
+                            );
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                        $usersList.empty();
+                        alert('Wystapił błąd :( - spróbuj ponownie');
+
+                    })
+                    ;
+            });
+
+            $usersList.off('change').on('change', function (e) {
+                if ('function' !== typeof client.getUserPosts) {
+                    alert('Metoda getUserPosts nie została zaimplementowana :(');
+                    return;
+                }
+
+                var userId = $(e.currentTarget).val();
+
+                client.getUserPosts(userId)
+                    .then(function (posts) {
+                        $postsTable.empty();
+                        if (!posts) {
+                            return;
+                        }
+
+                        for (var id in posts) {
+                            var post = posts[id];
+                            $postsTable.append(
+                                $('<tr>')
+                                    .append($('<td>').html(id))
+                                    .append($('<td>').html(post.date))
+                                    .append($('<td>').html(post.title))
+                                    .append($('<td>').html(post.body))
+                            );
+                        }
+                    });
             });
             ///
            
